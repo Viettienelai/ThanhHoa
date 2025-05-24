@@ -1,1 +1,68 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 2000px; /* Tạo chiều cao đủ để cuộn */
+}
 
+.header-placeholder {
+    height: 800px; /* Tạo khoảng trống để cuộn xuống */
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: #555;
+}
+
+.content-placeholder {
+    padding: 20px;
+    line-height: 1.6;
+    background-color: #e6ffe6;
+    height: 1000px; /* Thêm chiều cao để cuộn */
+}
+
+.sticky-bar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000; /* Đảm bảo nó luôn ở trên cùng */
+}
+
+.my-element {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.5s ease-in-out; /* Chỉ chuyển đổi các thuộc tính được phép */
+    box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước tổng thể */
+}
+
+.my-element:hover {
+    background-color: #0056b3;
+}
+
+/* Lớp này sẽ được thêm vào khi click */
+.my-element.enlarged {
+    /* Các thuộc tính này sẽ được JavaScript đặt động */
+    /* top: ...px; */
+    /* left: ...px; */
+    /* width: ...px; */
+    /* height: ...px; */
+    position: fixed; /* Quan trọng: chuyển sang fixed */
+    background-color: #28a745; /* Đổi màu khi phóng to */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Thêm bóng đổ ấn tượng */
+    z-index: 1001; /* Đảm bảo nó nằm trên mọi thứ */
+    /* Transform để phóng to và di chuyển đến giữa màn hình */
+    transform: translate(-50%, -50%) scale(1.5);
+    /* Các giá trị padding và font-size sẽ được đặt động hoặc giữ nguyên từ CSS */
+    padding: 50px 100px; /* Tăng padding để trông to hơn */
+    font-size: 36px; /* Tăng kích thước chữ */
+    border-radius: 10px;
+}
